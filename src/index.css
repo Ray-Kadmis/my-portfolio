@@ -1,13 +1,259 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  background: #ffffff;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
 }
+
+img {
+  width: 50px;
+}
+
+.logotext {
+  color: rgb(0, 0, 0);
+  text-decoration: none;
+  font-size: 40px;
+  padding: 0%;
+  margin: 0%;
+  font-weight: bold;
+  transition: 0.2s color;
+}
+
+.logotext:hover {
+  color: rgb(255, 255, 255);
+}
+@media (max-width: 991px) {
+  .sidebar {
+    background-color: rgba(177, 177, 177, 0.5);
+    backdrop-filter: blur(6px);
+  }
+}
+.offcanvas-title {
+  font-size: 40px;
+  margin-left: 20%;
+}
+
+.offcanvas-backdrop.show {
+  background-color: transparent !important;
+}
+
+.conbtn {
+  background-color: rgb(0, 100, 62);
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+  padding: 7px 10px 7px 10px;
+  border-radius: 50px;
+  transition: 0.2s background-color;
+  font-weight: bold;
+}
+
+.conbtn:hover {
+  background-color: rgb(37, 124, 88);
+}
+
+.navbar-toggler {
+  border: none;
+  font-size: 20px;
+}
+
+.navbar-toggler:focus,
+.btn-class:focus {
+  box-shadow: none;
+  outline: none;
+}
+
+.nav-link {
+  color: #000000;
+  font-weight: 500;
+  position: relative;
+  font-size: 20px;
+  text-decoration: none;
+}
+
+.nav-link:hover,
+.nav-link.active {
+  color: rgb(255, 255, 255);
+}
+
+.navbar {
+  position: absolute;
+  width: 100%;
+}
+nav {
+  margin-top: 0;
+  z-index: 9999;
+  top: 0%;
+  left: 0%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+@media (min-width: 300px) {
+  .nav-link::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background-color: rgb(0, 100, 62);
+    visibility: hidden;
+    transition: 0.2s ease-in-out;
+  }
+
+  .nav-link:hover::before,
+  .nav-link.active:before {
+    width: 100%;
+    visibility: visible;
+  }
+}
+
+.heroImg {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+.hero {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+@media (max-width: 700px) {
+  .hero {
+    height: 70vh;
+  }
+}
+
+.bg2 {
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 0;
+}
+
+.hero1 {
+  
+  width: 0%;
+  
+} 
+
+
+.hero9 {
+  position: absolute;
+  bottom: 0;
+  top: calc(50% - 45%);
+  left: calc(0% - 45%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 4;
+}
+.hero8 {
+  position: absolute;
+  bottom: 0;
+  top: calc(50% - 45%);
+  left: calc(0% + 10%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 5;
+}
+.hero6 {
+  position: absolute;
+  bottom: 0;
+  top: calc(50% + 20%);
+  left: calc(0% - 40%);
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 6;
+}
+.hero5 {
+  position: absolute;
+  bottom: 0;
+  top: calc(50% - 25%);
+  left: calc(0% - 20%);
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 7;
+}
+.hero4 {
+  position: absolute;
+  bottom: 0;
+  top: calc(0% - 4%);
+  left: calc(0% - 0%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 8;
+}
+.hero7 {
+  width: 0%;
+}
+
+.hero3 {
+  position: absolute;
+  bottom: 0;
+  top: calc(50% - 30%);
+  left: calc(0% + 20%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 9;
+}
+.hero2 {
+  position: absolute;
+  bottom: 0;
+  top: calc(50% + 10%);
+  left: calc(0% - 0%);
+  transform: translate(-50%, -50%);
+  width: 120%;
+  z-index: 10;
+}
+.hero10 {
+  position: absolute;
+  bottom: 0;
+  top: calc(50% - 15%);
+  left: calc(0% - 40%);
+  transform: translate(-50%, -50%);
+  width: 80%;
+  z-index: 11;
+}
+.bg1 {
+  position: absolute;
+  bottom: 0;
+  left: 0%;
+  transform: translateX(-50%);
+  width: 100%;
+   z-index: 12; 
+}
+
+
+ /* .textbox {
+  position: absolute;
+  z-index: 56556;
+  top: calc(50% - 50px);
+  left: 0%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  text-transform: uppercase;
+  color: #ffffff;
+  width: 800px;
+}  
+
+ h1 .text {
+  font-weight: 100;
+  line-height: 1;
+  font-size: 6.5rem;
+}
+
+h2 .text {
+  font-weight: 800;
+  font-size: 8rem;
+  line-height: 1;
+} 
+.parallax {
+} */
