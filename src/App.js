@@ -1,20 +1,43 @@
 import logo from "./logo.png";
-// import bg1 from "./bg1.png";
-// import bg2 from "./bg3.png";
-// import hero1 from "./hero2.png";
-// import hero2 from "./hero3.png";
-// import hero3 from "./hero5.png";
-// import hero4 from "./hero6.png";
-// import hero5 from "./hero7.png";
-// import hero6 from "./hero8.png";
-// import hero7 from "./hero9.png";
-// import hero8 from "./hero10.png";
-// import hero9 from "./hero11.png";
-// import hero10 from "./hero12.png";
+import project from "./project1.png";
+import {
+  FaHtml5,
+  FaCss3Alt,
+  FaJsSquare,
+  FaReact,
+  FaNodeJs,
+  FaPython,
+  FaPhp,
+  FaBootstrap,
+  FaGit,
+  FaGithub,
+  FaNpm,
+} from "react-icons/fa";
+import {
+  SiTypescript,
+  SiFirebase,
+  SiMongodb,
+  SiMysql,
+  SiSqlite,
+  SiExpress,
+  SiFigma,
+  SiAdobephotoshop,
+  SiAdobelightroom,
+  SiSvelte,
+  SiSass,
+  SiFlutter,
+  SiCplusplus,
+  SiCsharp,
+} from "react-icons/si";
+
 import "./App.css";
 import MouseTracker from "./useParallax.js";
-
+import AboutSection from "./About.js";
+import ContactForm from "./Contact";
+import Card from "./Card.js";
 function App() {
+  let text1 =
+    "A job portal website made using vanilla JS, Html, CSS and Firebase. The purpose of the website is to collect CV of job seekers and available jobs from recruiters and connect the both according to the recruiter's requirements and available candidate for the job";
   return (
     <div className="">
       <nav className="navbar  navbar-expand-xl">
@@ -82,34 +105,108 @@ function App() {
           </button>
         </div>
       </nav>
-      
-       {/* <div className="hero">
-        <img src={bg1} alt="" className="parallax bg1" />
-        <img src={bg2} alt="" className="parallax bg2" />
-        <img src={bg2} alt="" className="parallax bg3" />
-        <img src={hero1} alt="" className="parallax hero1" />
-        <img src={hero2} alt="" className="parallax hero2" />
-        <img src={hero3} alt="" className="parallax hero3" />
-        <img src={hero4} alt="" className="parallax hero4" />
-        <div className="textbox parallax">
-          <h1 className="text parallax">Some very amazing text</h1>
-          <h2 className="text parallax">Some very amazing text</h2>
-        </div>
-        <img src={hero5} alt="" className="parallax hero5" />
-        <img src={hero6} alt="" className="parallax hero6" />
-        <img src={hero7} alt="" className="parallax hero7" />
-        <img src={hero8} alt="" className="parallax hero8" />
-        <img src={hero9} alt="" className="parallax hero9" />
-        <img src={hero10} alt="" className="parallax hero10" />
-      </div>  */}
 
-      <MouseTracker/>
-    
+      <MouseTracker />
+      <AboutSection />
+        <h1 className="text-center skillsText">My Skillset</h1>
+      <div className="row skillSet">
+        <div className="col-2">
+          <Card icon={FaHtml5} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={FaJsSquare} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiTypescript} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiCplusplus} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiCsharp} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={FaPython} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={FaReact} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiSvelte} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiFlutter} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={FaNodeJs} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiExpress} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={FaBootstrap} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiSass} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={FaCss3Alt} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiFirebase} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiMongodb} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiMysql} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiSqlite} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiFigma} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={FaGithub} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={FaGit} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={FaNpm} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiAdobephotoshop} iconClass="icon" />
+        </div>
+        <div className="col-2">
+          <Card icon={SiAdobelightroom} iconClass="icon" />
+        </div>
+          
+        </div>
+        <div className="projects row">
+          <h1 className="proHeading text-center">Portfolio</h1>
+          <div className="col-lg-4 col-md-6 col-sm-12 text-center">
+            <Card imageSrc={project} description={text1} newClass="proCard1" />
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-12 text-center">
+            <Card imageSrc={project} description={text1} newClass="proCard1" />
+          </div>
+          <div className="col-lg-4 col-md-6 col-sm-12 text-center">
+            <Card imageSrc={project} description={text1} newClass="proCard1" />
+          </div>
+      </div>
+        <div className="row Contact">
+            <div className="col-lg-6 col-md-6 col-sm-12">
+              <h1>Contact Us</h1>
+            </div>
+            <div className="col-lg-6 col-md-6 col-sm-12">
+              <ContactForm />
+            </div>
+          </div>
     </div>
+    
   );
 }
 
 export default App;
-
-
-
