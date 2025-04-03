@@ -1,33 +1,5 @@
 import React from "react";
 import "./index.css";
-import {
-  FaHtml5,
-  FaCss3Alt,
-  FaJsSquare,
-  FaReact,
-  FaNodeJs,
-  FaPython,
-  FaPhp,
-  FaDatabase,
-  FaBootstrap,
-  FaJquery,
-  FaAdobe,
-} from "react-icons/fa";
-import {
-  SiTypescript,
-  SiFirebase,
-  SiMongodb,
-  SiMysql,
-  SiSqlite,
-  SiExpress,
-  SiFigma,
-  SiAdobephotoshop,
-  SiAdobelightroom,
-  SiAdobexd,
-  SiSvelte,
-  SiSass,
-  SiFlutter,
-} from "react-icons/si";
 
 const Card = ({ icon: Icon, iconClass, imageSrc, description , newClass }) => {
   const handleMouseMove = (e) => {
@@ -58,12 +30,12 @@ const Card = ({ icon: Icon, iconClass, imageSrc, description , newClass }) => {
 
   return (
     <div
-    className={`card ${newClass}`}
+    className={`card img-fluid ${newClass}`}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
     >
       {Icon && <Icon className={iconClass} />}
-      {imageSrc && <img src={imageSrc} alt="Card" className="card-image image-fluid" />}
+      {imageSrc && <img src={imageSrc} alt="Card" className="card-image img-fluid" />}
       <div className="card-description">{description}</div>
       
       </div>

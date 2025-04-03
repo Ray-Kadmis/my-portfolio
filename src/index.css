@@ -1,10 +1,15 @@
+* {
+  margin: 0%;
+  padding: 0%;
+}
+
 html,
 body {
-  margin: 0;
-  padding: 0;
+  margin: 0%;
+  padding: 0%;
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-x: hidden;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&display=swap");
@@ -13,7 +18,10 @@ body {
   font-weight: 200;
   font-style: normal;
 }
-
+.col-2 {
+  flex: 0 0 100%; /* Default to full width on small screens */
+  max-width: 100%;
+}
 .poppins-light {
   font-family: "Poppins", sans-serif;
   font-weight: 300;
@@ -85,10 +93,7 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-code {
-}
-
-img {
+.logoPic {
   width: 50px;
 }
 
@@ -159,7 +164,7 @@ img {
 }
 .navbar {
   position: absolute;
-  width: 100%;
+  width: 100vw;
 }
 nav {
   margin-top: 0;
@@ -191,13 +196,6 @@ nav {
   }
 }
 
-.heroImg {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  max-height: 100%;
-  object-fit: contain;
-}
 .hero {
   width: 100vw;
   height: 100vh;
@@ -205,14 +203,10 @@ nav {
   position: relative;
 }
 
-@media (max-width: 700px) {
-  .hero {
-    height: 70vh;
-  }
-}
 
 .bg3 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 0;
   left: 0%;
   transform: translateX(-50%);
@@ -222,6 +216,7 @@ nav {
 
 .hero9 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 40%;
   left: calc(0% - 45%);
   transform: translate(-50%, -50%);
@@ -230,6 +225,7 @@ nav {
 }
 .hero8 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 40%;
   left: calc(0% + 10%);
   transform: translate(-50%, -50%);
@@ -238,6 +234,7 @@ nav {
 }
 .hero6 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 30%;
 
   left: calc(0% - 40%);
@@ -247,6 +244,7 @@ nav {
 }
 .hero5 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 40%;
   left: calc(0% - 20%);
   transform: translate(-50%, -50%);
@@ -255,6 +253,7 @@ nav {
 }
 .hero4 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 0.5%;
   left: calc(0% - 0%);
   transform: translate(-50%, -50%);
@@ -264,6 +263,7 @@ nav {
 
 .hero3 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 20%;
   left: calc(0% + 20%);
   transform: translate(-50%, -50%);
@@ -272,6 +272,7 @@ nav {
 }
 .hero2 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 0%;
   left: calc(-10% - 0%);
   transform: translate(-50%, -50%);
@@ -280,6 +281,7 @@ nav {
 }
 .hero10 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 5%;
   left: calc(0% - 40%);
   transform: translate(-50%, -50%);
@@ -288,6 +290,7 @@ nav {
 }
 .bg1 {
   position: absolute;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
   bottom: 0;
   left: 0%;
   transform: translateX(-50%);
@@ -295,44 +298,80 @@ nav {
   z-index: 12;
 }
 
-/* .textbox {
+.textbox {
   position: absolute;
-  z-index: 56556;
-  top: calc(50% - 50px);
-  left: 0%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-  text-transform: uppercase;
-  color: #ffffff;
-  width: 800px;
-}  
-
- h1 .text {
-  font-weight: 100;
-  line-height: 1;
-  font-size: 6.5rem;
+  transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+  bottom: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  z-index: 13;
 }
 
-h2 .text {
+@keyframes slideFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.textA1 {
+  position: relative;
+  font-weight: 900;
+  line-height: 1;
+  font-size: calc(0.06 * 100vw);
+  color: #003c4e;
+  text-align: center;
+  animation: slideFromTop 1s forwards; /* Using forwards to retain final state */
+}
+
+.textA2 {
+  position: relative;
+  font-weight: 900;
+  line-height: 1;
+  font-size: calc(0.06 * 100vw);
+  color: #006863;
+  text-align: center;
+  opacity: 0;
+  animation: slideFromBottom 2s forwards;
+  animation-delay: 3s; /* Using forwards to retain final state */
+}
+
+/* 
+.text {
   font-weight: 800;
   font-size: 8rem;
   line-height: 1;
-} 
-*/
+  
+}  */
 
-h1 {
-  font-size: 80px;
-  height: 400px;
-  margin-top: 100px;
-  margin: 60px 0px 0px 130px;
-  padding-top: 100px;
+.aboutText1 {
+  font-size: calc(0.05 * 100vw);
+  height: calc(0.15 * 100vw);
+  margin: 7% 0px 0px 15%;
+  padding-top: 0px;
 }
-
+.aboutText2 {
+  margin: 15% 0px 0px 15%;
+}
 .meImg {
   height: auto;
-  width: 45%;
+  width: 55%;
   margin: 40px 0px 40px 0px;
   padding: 0%;
+  border-radius: 25px;
 }
 
 .imgDiv {
@@ -343,9 +382,9 @@ h1 {
 }
 
 h4 {
-  font-size: 20px;
-  margin: 60px 0px 0px 130px;
-  padding-top: 80px;
+  font-size: 1rem;
+  line-height: 200%;
+  padding-top: 0px;
 }
 
 /* src/components/Card.css */
@@ -363,11 +402,12 @@ h4 {
   align-items: center;
   font-family: "Poppins", sans-serif;
   font-size: 1.2em;
+  text-align: center;
 }
 .skillsText {
   margin: 0%;
   padding: 10%;
-  height: fit-content;
+  font-size: 80px;
 }
 
 .icon {
@@ -386,16 +426,21 @@ h4 {
 }
 
 .card-description {
-  width: 400px;
+  width: 100%;
   font-size: 16px;
   padding-top: 10px;
   font-family: "Poppins";
+  
 }
-
+.tags{
+  text-decoration: none;
+}
 .proCard1 {
   width: max-content;
   height: max-content;
   padding: 20px;
+  margin: 20px 0px 20px 0px;
+ 
 }
 .proHeading {
   font-size: 80px;
@@ -411,7 +456,6 @@ h4 {
   align-items: center;
 }
 
-/* src/components/ContactForm.css */
 .contact-form {
   display: flex;
   flex-direction: column;
@@ -469,14 +513,295 @@ button {
   color: white;
   font-size: 1em;
   cursor: pointer;
+  transition: ease-in-out 0.3s;
 }
 
 button:hover {
   background-color: rgb(255, 255, 255);
   color: rgb(0, 100, 62);
-  border: 1px rgb(0, 100, 62);
+  border: 3px solid rgb(0, 100, 62);
 }
 
-.skillSet{
-  margin-left: 3%;
+.formCSS {
+  width: 80%;
+  margin: 10%;
+  padding: 50px;
+  border: 5px solid rgb(0, 100, 62);
+  border-radius: 25px;
+}
+.SubMes {
+  font-family: "Poppins";
+  font-weight: 400;
+  font-size: 20px;
+  padding-top: 20px;
+}
+.contactText {
+  margin: 10%;
+  padding: 0%;
+  height: max-content;
+  width: 100%;
+  font-size: calc(0.05 * 100vw);
+}
+
+.contactText2 {
+  margin-left: 10%;
+  padding: 0%;
+  height: max-content;
+  width: 100%;
+}
+.contactText3 {
+  margin: 0% 0% 10% 10%;
+  padding: 0;
+  height: max-content;
+  width: 100%;
+}
+.container {
+  height: max-content;
+}
+
+.footer {
+  display: flex;
+  width: 100%;
+  height: 10vh;
+  background-image: url(./darkbg2.png);
+  color: white;
+  text-align: center;
+  padding: 0;
+}
+
+.fText {
+  background-color: rgba(177, 177, 177, 0);
+  backdrop-filter: blur(4px);
+  height: 100%;
+  width: 100%;
+  padding: 4vh;
+  margin: 0;
+}
+
+.hidden {
+  opacity: 0;
+  transition: 1s ease-in-out;
+  filter: blur(5px);
+}
+
+.show {
+  opacity: 1;
+  transform: translateX(0);
+  transition: 1s ease-out;
+}
+
+@media (max-width: 992px) {
+  .aboutText1 {
+    margin: 0%;
+    margin-top: 80px;
+    padding: 0;
+    /* Use absolute positioning for centering */
+    top: 50%;
+    text-align: center;
+    left: 50%;
+    font-size: calc(0.1 * 100vw);
+    height: calc(0.4 * 100vw); /* Correct height usage */
+  }
+  .aboutText2 {
+    margin: 0%;
+    padding: 5% 10% 5% 10%;
+    text-align: center;
+  }
+  .contactText {
+    margin: 0%;
+    text-align: center;
+    margin-top: 10%;
+    padding: 0%;
+    height: max-content;
+    width: 100%;
+    font-size: calc(0.05 * 100vw);
+  }
+  .contactText2 {
+    margin-left: 0%;
+    padding: 5%;
+    text-align: center;
+    justify-content: center;
+    line-height: 150%;
+
+    height: max-content;
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    width: 100vw;
+    height: 70vh;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .bg3 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 0;
+    left: 0%;
+    transform: translateX(-50%);
+    width: 130%;
+    z-index: 0;
+  }
+
+  .hero9 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 55%;
+    left: calc(0% - 35%);
+    transform: translate(-50%, -50%);
+    width: 200%;
+    z-index: 4;
+  }
+  .hero8 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 52%;
+    left: calc(0% + -20%);
+    transform: translate(-50%, -50%);
+    width: 150%;
+    z-index: 5;
+  }
+  .hero6 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 48%;
+    left: calc(0% - 40%);
+    transform: translate(-50%, -50%);
+    width: 150%;
+    z-index: 6;
+  }
+  .hero5 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 35%;
+    left: calc(0% - 20%);
+    transform: translate(-50%, -50%);
+    width: 150%;
+    z-index: 7;
+  }
+  .hero4 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 20%;
+    left: calc(0% - 50%);
+    transform: translate(-50%, -50%);
+    width: 150%;
+    z-index: 8;
+  }
+
+  .hero3 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 20%;
+    left: calc(0% + 20%);
+    transform: translate(-50%, -50%);
+    width: 100%;
+    z-index: 9;
+  }
+  .hero2 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 5%;
+    left: calc(-30% - 0%);
+    transform: translate(-50%, -50%);
+    width: calc(220%);
+    z-index: 10;
+  }
+  .hero10 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 10%;
+    left: calc(0% - 40%);
+    transform: translate(-50%, -50%);
+    width: 130%;
+    z-index: 11;
+  }
+  .bg1 {
+    position: absolute;
+    transition: 0.4s cubic-bezier(0.22, 0.49, 0.33, 0.99);
+    bottom: 0;
+    left: -53%;
+    transform: translateX(-50%);
+    width: 200%;
+    z-index: 12;
+  }
+
+  .textA1 {
+    position: relative;
+    font-weight: 900;
+    line-height: 1;
+    font-size: calc(0.10 * 100vw);
+    color: #003c4e;
+    text-align: center;
+    animation: slideFromTop 1s forwards; /* Using forwards to retain final state */
+  }
+  
+  .textA2 {
+    position: relative;
+    font-weight: 900;
+    line-height: 1;
+    font-size: calc(0.10 * 100vw);
+    color: #006863;
+    text-align: center;
+    opacity: 0;
+    animation: slideFromBottom 2s forwards;
+    animation-delay: 3s; /* Using forwards to retain final state */
+  }
+
+  .logoPic {
+    visibility: hidden;
+    width: 0;
+  }
+  .logotext {
+    font-size: 30px;
+  }
+
+  .conbtn {
+    visibility: hidden;
+    width: 0;
+    height: 0;
+  }
+  .meImg {
+    width: 80%;
+  }
+  .textCon {
+    position: relative;
+    justify-content: center; /* Center horizontally */
+    align-items: center;
+  }
+  .aboutText1 {
+    margin: 0;
+    padding: 0;
+    /* Use absolute positioning for centering */
+    top: 50%;
+    text-align: center;
+    left: 50%;
+    font-size: calc(0.14 * 100vw);
+    height: calc(0.9 * 100vw); /* Correct height usage */
+  }
+  .aboutText2 {
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+  }
+
+  .contactText {
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+    padding: 20px;
+    line-height: 150%;
+    font-size: calc(0.14 * 100vw);
+  }
+
+  .contactText2 {
+    margin: 0%;
+    padding: 0%;
+    text-align: center;
+    padding: 20px;
+    line-height: 150%;
+  }
 }

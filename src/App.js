@@ -1,5 +1,7 @@
-import logo from "./logo.png";
-import project from "./project1.png";
+import useScrollAnimation from "./Animate.js";
+import project1 from "./project1.png";
+import project2 from "./Bt.png";
+import project3 from "./GL.png";
 import {
   FaHtml5,
   FaCss3Alt,
@@ -7,7 +9,6 @@ import {
   FaReact,
   FaNodeJs,
   FaPython,
-  FaPhp,
   FaBootstrap,
   FaGit,
   FaGithub,
@@ -30,182 +31,278 @@ import {
   SiCsharp,
 } from "react-icons/si";
 
-import "./App.css";
+import "./index.css";
 import MouseTracker from "./useParallax.js";
 import AboutSection from "./About.js";
-import ContactForm from "./Contact";
+import ContactForm from "./Contact.js";
 import Card from "./Card.js";
+import Footer from "./Footer.js";
+import Navbar from "./navbar.js";
+
 function App() {
   let text1 =
     "A job portal website made using vanilla JS, Html, CSS and Firebase. The purpose of the website is to collect CV of job seekers and available jobs from recruiters and connect the both according to the recruiter's requirements and available candidate for the job";
+  let text2 =
+    "A website template made for appointment based businesses in NEXTjs 15, with a dashboard to view and manage appointments. intergated with Stripe for subscriptions and twillio for SMS updates on appointment status to customers.";
+  let text3 =
+    "A web browser extention specifically made for google maps to scrape publically available data on businesses and shops listed on google maps according to searched catagory. Once scrapping is done download the data as a CSV file.";
+  const addElement = useScrollAnimation();
+
   return (
-    <div className="">
-      <nav className="navbar  navbar-expand-xl">
-        <div className="container-fluid">
-          <a className="logotext me-auto" href="/">
-            <img src={logo} /> Rehaan Zaheer
-          </a>
-
-          <div
-            className="sidebar offcanvas offcanvas-start"
-            tabindex="-1"
-            id="offcanvasNavbar"
-            aria-labelledby="offcanvasNavbarLabel"
-          >
-            <div className="offcanvas-header ">
-              <h5 className="offcanvas-title " id="offcanvasNavbarLabel">
-                Navigation
-              </h5>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="offcanvas"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="offcanvas-body">
-              <ul className="navbar-nav justify-content-center flex-grow-1 pe-3">
-                <li className="nav-item">
-                  <a className="nav-link mx-lg-5" aria-current="page" href="#">
-                    Home
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link mx-lg-5" aria-current="page" href="#">
-                    About
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link mx-lg-5" aria-current="page" href="#">
-                    Portfolio
-                  </a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link mx-lg-5" aria-current="page" href="#">
-                    Skills
-                  </a>
-                </li>
-              </ul>
-
-              <div></div>
-            </div>
-          </div>
-          <a href="" className="conbtn">
-            Contact Me!
-          </a>
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#offcanvasNavbar"
-            aria-controls="offcanvasNavbar"
-            aria-label="Toggle navigation"
-          >
-            <span className="navbar-toggler-icon"></span>
-          </button>
-        </div>
-      </nav>
-
-      <MouseTracker />
-      <AboutSection />
-        <h1 className="text-center skillsText">My Skillset</h1>
-      <div className="row skillSet">
-        <div className="col-2">
+    <div className="body">
+      <Navbar />
+      <div
+        className="sectinpm help
+      on"
+        id="home"
+      >
+        <MouseTracker />
+      </div>
+      <div className="section" id="about">
+        <AboutSection />
+      </div>
+      <h1
+        className="hidden text-center skillsText  "
+        data-animation="show"
+        ref={addElement}
+        id="skills"
+      >
+        My Skillset
+      </h1>
+      <div className="row  justify-content-center skillSet">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12  hidden"
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaHtml5} iconClass="icon" />
         </div>
-        <div className="col-2">
+
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaJsSquare} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiTypescript} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiCplusplus} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiCsharp} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaPython} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaReact} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiSvelte} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiFlutter} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaNodeJs} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiExpress} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaBootstrap} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiSass} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaCss3Alt} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiFirebase} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiMongodb} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiMysql} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiSqlite} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiFigma} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaGithub} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaGit} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={FaNpm} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiAdobephotoshop} iconClass="icon" />
         </div>
-        <div className="col-2">
+        <div
+          className="col-xl-2 col-lg-3 d-flex justify-content-center align-items-center col-md-4 col-sm-6 col-xs-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
           <Card icon={SiAdobelightroom} iconClass="icon" />
         </div>
-          
-        </div>
-        <div className="projects row">
-          <h1 className="proHeading text-center">Portfolio</h1>
-          <div className="col-lg-4 col-md-6 col-sm-12 text-center">
-            <Card imageSrc={project} description={text1} newClass="proCard1" />
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-12 text-center">
-            <Card imageSrc={project} description={text1} newClass="proCard1" />
-          </div>
-          <div className="col-lg-4 col-md-6 col-sm-12 text-center">
-            <Card imageSrc={project} description={text1} newClass="proCard1" />
-          </div>
       </div>
-        <div className="row Contact">
-            <div className="col-lg-6 col-md-6 col-sm-12">
-              <h1>Contact Us</h1>
-            </div>
-            <div className="col-lg-6 col-md-6 col-sm-12">
-              <ContactForm />
-            </div>
-          </div>
+
+      <div
+        className="projects row hidden  "
+        data-animation="show"
+        ref={addElement}
+      >
+        <h1 id="portfolio" className="proHeading text-center">
+          Portfolio
+        </h1>
+        <div className="col-lg-4 col-md-6 col-sm-12 text-center ">
+          <a href="https://www.sub-it.net/" className="tags">
+            <Card imageSrc={project1} description={text1} newClass="proCard1" />
+          </a>
+        </div>
+        <div className="col-lg-4 col-md-6 col-sm-12 text-center">
+          <a
+            href="https://github.com/Ray-Kadmis/Business-Website-Template"
+            className="tags"
+          >
+            <Card imageSrc={project2} description={text2} newClass="proCard1" />
+          </a>
+        </div>
+        <div className="col-lg-4 col-md-6 col-sm-12 text-center">
+          <a
+            href="https://github.com/Ray-Kadmis/Google-Map-Web-Scrapper"
+            className="tags"
+          >
+            <Card imageSrc={project3} description={text3} newClass="proCard1" />
+          </a>
+        </div>
+      </div>
+      <div className="row Contact">
+        <div
+          className="col-lg-6 col-md-12 col-sm-12 hidden  "
+          data-animation="show"
+          ref={addElement}
+        >
+          <h1 id="contact" className="contactText">
+            Get In Touch, And Let's Create Something Amazing Together!
+          </h1>
+          <h4 className="contactText2">
+            Thank you for visiting my portfolio! If you're looking for top-notch
+            website design, development, or optimization services, you're in the
+            right place. I specialize in creating stunning, user-friendly
+            websites tailored to your unique needs and goals. Whether you have a
+            specific vision in mind or need guidance to bring your ideas to
+            life, I'm here to help. Please don't hesitate to reach out—I’m
+            excited to collaborate with you and turn your digital dreams into
+            reality.
+          </h4>
+          <h6 className="contactText3">
+            Are you a recruiter?{" "}
+            <a href="RehanCV.pdf" download="RehanCV.pdf">
+              <button>Download CV</button>
+            </a>
+          </h6>
+        </div>
+        <div className="col-lg-6 col-md-12 col-sm-12">
+          <ContactForm />
+        </div>
+      </div>
+      <Footer />
     </div>
-    
   );
 }
 

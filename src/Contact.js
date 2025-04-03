@@ -1,13 +1,13 @@
 // src/components/ContactForm.jsx
-import React, { useState } from 'react';
-
+import React, { useState } from "react";
+import useScrollAnimation from "./Animate.js";
 const ContactForm = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    numberOfPages: '',
-    hasDesign: '',
-    email: '',
-    message: ''
+    name: "",
+    numberOfPages: "",
+    hasDesign: "",
+    email: "",
+    message: "",
   });
 
   const [result, setResult] = useState("");
@@ -16,7 +16,7 @@ const ContactForm = () => {
     const { name, value } = e.target;
     setFormData({
       ...formData,
-      [name]: value
+      [name]: value,
     });
   };
 
@@ -24,35 +24,45 @@ const ContactForm = () => {
     e.preventDefault();
     setResult("Sending....");
     const formDataToSubmit = new FormData();
-    formDataToSubmit.append("access_key", "6329ffeb-0510-47ab-96af-212052d5d825");
+    formDataToSubmit.append(
+      "access_key",
+      "6329ffeb-0510-47ab-96af-212052d5d825"
+    );
     for (const key in formData) {
       formDataToSubmit.append(key, formData[key]);
     }
 
     const response = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
-      body: formDataToSubmit
+      body: formDataToSubmit,
     });
 
     const data = await response.json();
 
     if (data.success) {
-      setResult("Form Submitted Successfully");
+      setResult(
+        "Your message has been successfully sent! I'll get back to you promptly, ensuring you're not kept waiting. Stay tuned for my response!"
+      );
       setFormData({
-        name: '',
-        numberOfPages: '',
-        hasDesign: '',
-        email: '',
-        message: ''
+        name: "",
+        numberOfPages: "",
+        hasDesign: "",
+        email: "",
+        message: "",
       });
     } else {
       console.log("Error", data);
       setResult(data.message);
     }
   };
-
+  const addElement = useScrollAnimation();
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form
+      className="formCSS hidden  "
+      data-animation="show"
+      ref={addElement}
+      onSubmit={handleSubmit}
+    >
       <div className="form-group">
         <label htmlFor="name">Name:</label>
         <input
@@ -83,7 +93,7 @@ const ContactForm = () => {
               type="radio"
               name="hasDesign"
               value="yes"
-              checked={formData.hasDesign === 'yes'}
+              checked={formData.hasDesign === "yes"}
               onChange={handleChange}
               required
             />
@@ -94,7 +104,7 @@ const ContactForm = () => {
               type="radio"
               name="hasDesign"
               value="no"
-              checked={formData.hasDesign === 'no'}
+              checked={formData.hasDesign === "no"}
               onChange={handleChange}
               required
             />
@@ -123,9 +133,10 @@ const ContactForm = () => {
           required
         ></textarea>
       </div>
-      
+
       <button type="submit">Submit</button>
-      <span>{result}</span>
+      <br />
+      <span className="SubMes">{result}</span>
     </form>
   );
 };
